@@ -106,8 +106,8 @@ const BouncingCircle = ({ imageSrc, size, glowColor }) => {
     y: Math.random() * (window.innerHeight - size) 
   });
   const [velocity, setVelocity] = useState({ 
-    x: (Math.random() - 0.5) * 1.5, 
-    y: (Math.random() - 0.5) * 1.5 
+    x: (Math.random() - 0.5) * .9, 
+    y: (Math.random() - 0.5) * .9
   });
 
   useEffect(() => {
