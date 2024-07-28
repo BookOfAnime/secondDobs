@@ -43,6 +43,8 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--text-color);
+  position: relative;
+  left: 200px;
 }
 
 .logo-image {
@@ -90,6 +92,8 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
+  position: relative;
+  right: 200px;
 }
 
 .launch-button:hover {
