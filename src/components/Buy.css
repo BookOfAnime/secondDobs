@@ -1,0 +1,203 @@
+.buy {
+  background: linear-gradient(to bottom, #0B0B0B, #0098ea);
+  color: #FFFFFF;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buy-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.buy-title {
+  font-family: 'This Cafe', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 3rem;
+  color: #40E0D0;
+}
+
+.buy-steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.buy-step {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.buy-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(64, 224, 208, 0.2);
+}
+
+.step-icon {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  color: #40E0D0;
+}
+
+.buy-step h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+  color: #40E0D0;
+}
+
+.buy-step p {
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  color: #CCCCCC;
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+.get-phantom-button {
+  display: inline-block;
+  background-color: #40E0D0;
+  color: #0B0B0B;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.get-phantom-button:hover {
+  background-color: #4169E1;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(65, 105, 225, 0.4);
+}
+
+.button-character {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(100px, 20vw, 160px);
+  height: auto;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px #40E0D0);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  pointer-events: none;
+}
+
+.get-phantom-button:hover + .button-character {
+  transform: translateX(-50%) translateY(-10px);
+  filter: drop-shadow(0 0 20px #40E0D0);
+}
+
+/* Large Screens */
+@media screen and (min-width: 1441px) {
+  .buy-content {
+    max-width: 1400px;
+  }
+
+  .buy-step {
+    padding: 2.5rem;
+  }
+}
+
+/* Desktop and Larger Tablets */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .buy-steps {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets and Smaller Desktops */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .buy {
+    padding: 3rem 1.5rem;
+  }
+
+  .buy-steps {
+    gap: 1rem;
+  }
+
+  .buy-step {
+    padding: 1.5rem;
+  }
+}
+
+/* Large Mobile Devices and Small Tablets */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .buy {
+    padding: 2.5rem 1rem;
+  }
+
+  .buy-steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .get-phantom-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .button-character {
+    position: static;
+    display: block;
+    margin: 1rem auto;
+    transform: none;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .buy {
+    padding: 2rem 1rem;
+  }
+
+  .buy-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .buy-step {
+    padding: 1rem;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .get-phantom-button {
+    width: 100%;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .button-character {
+    position: static;
+    display: block;
+    margin: 1rem auto;
+    transform: none;
+    width: 100px;
+  }
+}

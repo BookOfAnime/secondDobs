@@ -1,0 +1,117 @@
+.about {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-top: calc(var(--header-height) + 2rem);
+    background: linear-gradient(to bottom, #0098ea, #0B0B0B); /* Gradient from blue to #0B0B0B */
+  }
+  
+  .about-title {
+    font-family: 'This Cafe', sans-serif;
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem; /* Add gap between letters */
+    z-index: 1;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+  }
+  
+  .about-image {
+    flex: 1;
+    position: relative;
+    filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+    scale: 1.55;
+    z-index: -0;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: rgb(192, 216, 202);
+  }
+  
+  .glow {
+    opacity: 0;
+    color: var(--glow-color);
+    text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    transition: opacity 0.5s ease-out;
+  }
+  
+  .glow.animate {
+    opacity: 1;
+  }
+  
+  .highlight {
+    color: #FFD700; /* Gold color for highlight */
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+  }
+  
+  .highlight.animate {
+    color: #FFD700;
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  .animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-title {
+      font-size: 1.5rem;
+    }
+  
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  
+    .about-image {
+      margin-bottom: 1rem;
+    }
+  
+    .about-dog-image {
+      max-width: 150px;
+    }
+  
+    .about-text {
+      width: 100%;
+      padding: 0 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .about-text p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+  }
+  

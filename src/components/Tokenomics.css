@@ -1,0 +1,170 @@
+.tokenomics {
+  background: linear-gradient(to bottom, #0098ea, #0B0B0B);
+  color: #FFFFFF;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tokenomics-title-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+  opacity: 0; /* Start with 0 opacity for the animation */
+}
+
+.tokenomics-character {
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: auto;
+  scale: 3.3;
+  transition: transform 0.3s ease;
+}
+
+.tokenomics-character:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.tokenomics-title {
+  font-family: 'This Cafe', sans-serif;
+  font-size: 3.5rem;
+  color: #40E0D0;
+  position: relative;
+  z-index: 1;
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px #40E0D0, 0 0 10px #40E0D0, 0 0 15px #40E0D0;
+  }
+  to {
+    text-shadow: 0 0 10px #40E0D0, 0 0 20px #40E0D0, 0 0 30px #40E0D0;
+  }
+}
+
+.tokenomics-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.tokenomics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tokenomics-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Start with 0 opacity for the animation */
+}
+
+.glow-on-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-on-hover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(64, 224, 208, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-on-hover:hover::before {
+  opacity: 1;
+}
+
+.tokenomics-box:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+}
+
+.tokenomics-box.full-width {
+  width: 100%;
+}
+
+.tokenomics-label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #CCCCCC;
+}
+
+.tokenomics-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #40E0D0;
+}
+
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #40E0D0;
+  color: #0B0B0B;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.copy-notification.show {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .tokenomics {
+    padding: 2rem 1rem;
+  }
+
+  .tokenomics-character {
+    width: 80px;
+  }
+
+  .tokenomics-title {
+    font-size: 2.5rem;
+  }
+
+  .tokenomics-row {
+    flex-direction: column;
+  }
+
+  .tokenomics-box {
+    padding: 1rem;
+  }
+
+  .tokenomics-label {
+    font-size: 0.9rem;
+  }
+
+  .tokenomics-value {
+    font-size: 1.2rem;
+  }
+}
