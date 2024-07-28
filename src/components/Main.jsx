@@ -271,15 +271,15 @@ const Main = () => {
     <div className="main-container">
       <div className="nav">
         <div className="logo">
-          <img src="/logo.png" alt="Rebel Dog Coin Logo" className="logo-image" />
-          MochiDeFi
+          <img src="/DOBS.png" alt="Rebel Dog Coin Logo" className="logo-image" />
+          $DOBS
         </div>
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <a href="#about">About</a>
-          <a href="#token">Token</a>
-          <a href="#nft">NFT</a>
-          <a href="#dapp">Dapp</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
+          <a href="#token" onClick={() => setIsMenuOpen(false)}>Token</a>
+          <a href="#nft" onClick={() => setIsMenuOpen(false)}>NFT</a>
+          <a href="#dapp" onClick={() => setIsMenuOpen(false)}>Dapp</a>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </nav>
         <button className="launch-button">Launch App</button>
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
