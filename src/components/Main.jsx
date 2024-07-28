@@ -281,7 +281,7 @@ const Main = () => {
           <a href="#dapp" onClick={() => setIsMenuOpen(false)}>Dapp</a>
           <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </nav>
-        <button className="launch-button">Launch App</button>
+        <button className="launch-button">Join Us</button>
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`}>
             <span></span>
