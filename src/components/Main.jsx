@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { FaTelegram, FaInstagram, FaTwitter, FaDiscord } from 'react-icons/fa';
 import './Main.css';
 
 gsap.registerPlugin(TextPlugin);
@@ -161,12 +162,14 @@ const BouncingCircle = ({ imageSrc, size, glowColor }) => {
 
 const Main = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const cardRef = useRef(null);
   const canvasRef = useRef(null);
   const textRef = useRef(null);
   const h1Ref = useRef(null);
   const h2Ref = useRef(null);
   const buttonRef = useRef(null);
+  const socialRef = useRef(null);
   const [displayText, setDisplayText] = useState('Bliss');
   const [isYellow, setIsYellow] = useState(false);
 
@@ -251,7 +254,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    gsap.set([h1Ref.current, textRef.current, h2Ref.current, buttonRef.current], { 
+    gsap.set([h1Ref.current, textRef.current, h2Ref.current, buttonRef.current, socialRef.current.children], { 
       opacity: 0, 
       y: 50 
     });
@@ -260,14 +263,18 @@ const Main = () => {
     tl.to(h1Ref.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' })
       .to(textRef.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
       .to(h2Ref.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
-      .to(buttonRef.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5');
+      .to(buttonRef.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
+      .to(socialRef.current.children, { duration: 0.5, opacity: 1, y: 0, stagger: 0.1, ease: "back.out(1.7)" }, '-=0.5');
   }, []);
 
   return (
     <div className="main-container">
-      <header className="header">
-        <div className="logo">Rebel Dog Coin</div>
-        <nav className="nav">
+      <div className="nav">
+        <div className="logo">
+          <img src="/logo.png" alt="Rebel Dog Coin Logo" className="logo-image" />
+          MochiDeFi
+        </div>
+        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
           <a href="#about">About</a>
           <a href="#token">Token</a>
           <a href="#nft">NFT</a>
@@ -275,7 +282,14 @@ const Main = () => {
           <a href="#contact">Contact</a>
         </nav>
         <button className="launch-button">Launch App</button>
-      </header>
+        <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
       <BackgroundTickers />
       <main className="content">
         <div className="text-content">
@@ -284,6 +298,12 @@ const Main = () => {
           </h1>
           <h2 ref={h2Ref}>Rebel Dog on Solana.</h2>
           <CoolButton ref={buttonRef} />
+          <div ref={socialRef} className="social-icons">
+            <a href="https://twitter.com" className="icon twitter"><FaTwitter /></a>
+            <a href="https://instagram.com" className="icon instagram"><FaInstagram /></a>
+            <a href="https://telegram.org" className="icon telegram"><FaTelegram /></a>
+            <a href="https://discord.com" className="icon discord"><FaDiscord /></a>
+          </div>
         </div>
         <div className="image-container">
           <div
@@ -294,8 +314,6 @@ const Main = () => {
           >
             <img src="/main.jpeg" alt="Rebel Dog" />
             <canvas ref={canvasRef} className="particle-canvas" />
-            <div className="social-icon icon-twitter"></div>
-            <div className="social-icon icon-instagram"></div>
           </div>
         </div>
       </main>
