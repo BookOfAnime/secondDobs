@@ -433,6 +433,8 @@ body {
   .content {
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: 100px;
   }
 
   .image-container {
@@ -465,6 +467,12 @@ body {
   .launch-button {
     padding: 8px 16px;
     font-size: 0.9rem;
+    position: relative;
+    right: 10vw;
+  }
+  .logo {
+    position: relative;
+    left: 10vw;
   }
 
   .social-icons {
@@ -476,11 +484,15 @@ body {
   .main-container {
     padding-top: 80px;
     padding-bottom: 40px;
+   
   }
 
   .content {
     top: 0;
     gap: 30px;
+    position: relative;
+    top: 15vh;
+  
   }
 
   .text-content h1 {
@@ -502,7 +514,7 @@ body {
     height: 280px;
     margin-top: 20px;
     position: absolute;
-    top: 0px;
+    top: 30vh;
 
   }
 
@@ -516,6 +528,7 @@ body {
 
   .logo {
     font-size: 1.2rem;
+   
   }
 
   .logo-image {
