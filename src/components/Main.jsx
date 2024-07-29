@@ -294,7 +294,7 @@ const Main = () => {
       <main className="content">
         <div className="text-content">
           <h1 ref={h1Ref}>
-            Solana's Rebel Dog: <span ref={textRef} className={`animated-text ${isYellow ? 'yellow-text' : ''}`}>{displayText}</span>
+            Solana's Rebel Dog <span ref={textRef} className={`animated-text ${isYellow ? 'yellow-text' : ''}`}>{displayText}</span>
           </h1>
           <h2 ref={h2Ref}>Rebel Dog on Solana.</h2>
           <CoolButton ref={buttonRef} />

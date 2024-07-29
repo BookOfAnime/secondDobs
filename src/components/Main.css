@@ -2,6 +2,10 @@
   font-family: 'This Cafe';
   src: url('/This Cafe.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'DT';
+  src: url('/DT.otf') format('opentype');
+}
 
 :root {
   --primary-color: #0098ea;
@@ -18,7 +22,7 @@
 }
 
 body {
-  font-family: Arial, 'This Cafe', sans-serif;
+  font-family: 'DT',Arial, 'This Cafe', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -274,6 +278,7 @@ body {
 .text-content h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: #000;
 }
 
 .cool-button {
@@ -289,6 +294,7 @@ body {
   transition: all 0.3s ease;
   outline: none;
   margin-top: 20px;
+  top: -3vh;
 }
 
 .cool-button:before {
@@ -481,10 +487,9 @@ body {
 }
 
 @media (max-width: 768px) {
-  .main-container {
+  main-container {
     padding-top: 80px;
     padding-bottom: 40px;
-   
   }
 
   .content {
@@ -492,16 +497,24 @@ body {
     gap: 30px;
     position: relative;
     top: 15vh;
-  
   }
 
   .text-content h1 {
     font-size: 2.8rem;
     white-space: normal;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-content h1 .animated-text {
+    margin-left: 10px;
   }
 
   .text-content h2 {
     font-size: 1.3rem;
+    margin-top: 10px;
   }
 
   .cool-button {
@@ -513,10 +526,10 @@ body {
     width: 280px;
     height: 280px;
     margin-top: 20px;
-    position: absolute;
-    top: 30vh;
-
+    position: relative;
+    top: 10vh;
   }
+
 
   .nav {
     flex-wrap: wrap;
@@ -575,12 +588,11 @@ body {
   }
 }
 
+
 @media (max-width: 576px) {
   .main-container {
     padding-top: 70px;
     padding-bottom: 30px;
-   
-    
   }
 
   .nav {
@@ -591,24 +603,25 @@ body {
     gap: 20px;
     padding: 0 15px;
     position: relative;
-    top: 10vh;
+    top: 5vh;
   }
 
   .text-content h1 {
     font-size: 2.3rem;
+    line-height: 1.2;
   }
 
   .text-content h2 {
     font-size: 1.1rem;
+    margin-top: 5px;
   }
 
   .image-container {
     width: 220px;
     height: 220px;
     position: relative;
-    top: -25vh;
+    top: 5vh;
   }
-
   .cool-button {
     padding: 10px 20px;
     font-size: 14px;
@@ -616,11 +629,12 @@ body {
 
   .social-icons {
     gap: 8px;
+
   }
 
   .social-icons .icon {
-    width: 35px;
-    height: 35px;
+    width: 350px;
+    height: 350px;
   }
 
   .ticker__item {
