@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/TextPlugin';
-import { FaTelegram, FaInstagram, FaTwitter, FaDiscord } from 'react-icons/fa';
-import './Main.css';
+import React, { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+import { FaTelegram, FaInstagram, FaTwitter, FaDiscord } from "react-icons/fa";
+import "./Main.css";
 
 gsap.registerPlugin(TextPlugin);
 
@@ -13,7 +13,7 @@ const InfiniteLooper = ({ speed, direction, children }) => {
 
   function resetAnimation() {
     if (innerRef.current) {
-      innerRef.current.style.animation = 'none';
+      innerRef.current.style.animation = "none";
       innerRef.current.offsetHeight; // Trigger reflow
       innerRef.current.style.animation = null;
     }
@@ -40,18 +40,22 @@ const InfiniteLooper = ({ speed, direction, children }) => {
       }
     }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
     <div className="looper" ref={outerRef}>
-      <div className="looper__innerList" ref={innerRef} style={{
-        animationDuration: `${speed}s`,
-        animationDirection: direction === "right" ? "reverse" : "normal"
-      }}>
+      <div
+        className="looper__innerList"
+        ref={innerRef}
+        style={{
+          animationDuration: `${speed}s`,
+          animationDirection: direction === "right" ? "reverse" : "normal",
+        }}
+      >
         {[...Array(looperInstances)].map((_, ind) => (
           <div key={ind} className="looper__listInstance">
             {children}
@@ -66,12 +70,26 @@ const BackgroundTickers = () => {
   return (
     <div className="background-tickers">
       {[...Array(20)].map((_, index) => (
-        <InfiniteLooper key={index} speed={100} direction={index % 2 === 0 ? "left" : "right"}>
-          <div className="ticker__item">$DOBS</div>
-          <div className="ticker__item">$DOBS</div>
-          <div className="ticker__item">$DOBS</div>
-          <div className="ticker__item">$DOBS</div>
-          <div className="ticker__item">$DOBS</div>
+        <InfiniteLooper
+          key={index}
+          speed={100}
+          direction={index % 2 === 0 ? "left" : "right"}
+        >
+          <div className="ticker__item">
+            <span className="currency-symbol">$</span>DOBS
+          </div>
+          <div className="ticker__item">
+            <span className="currency-symbol">$</span>DOBS
+          </div>
+          <div className="ticker__item">
+            <span className="currency-symbol">$</span>DOBS
+          </div>
+          <div className="ticker__item">
+            <span className="currency-symbol">$</span>DOBS
+          </div>
+          <div className="ticker__item">
+            <span className="currency-symbol">$</span>DOBS
+          </div>
         </InfiniteLooper>
       ))}
     </div>
@@ -87,12 +105,14 @@ const CoolButton = React.forwardRef((props, ref) => {
   return (
     <button
       ref={ref}
-      className={`cool-button ${isPressed ? 'pressed' : ''}`}
+      className={`cool-button ${isPressed ? "pressed" : ""}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
     >
-      <span className="cool-button-content">Buy $DOBS</span>
+      <span className="cool-button-content">
+        Buy <span className="currency-symbol">$</span>DOBS
+      </span>
       <span className="cool-button-glitch"></span>
       <span className="cool-button-label">Rebel Dog Coin</span>
     </button>
@@ -101,20 +121,20 @@ const CoolButton = React.forwardRef((props, ref) => {
 
 const BouncingCircle = ({ imageSrc, size, glowColor }) => {
   const circleRef = useRef(null);
-  const [position, setPosition] = useState({ 
-    x: Math.random() * (window.innerWidth - size), 
-    y: Math.random() * (window.innerHeight - size) 
+  const [position, setPosition] = useState({
+    x: Math.random() * (window.innerWidth - size),
+    y: Math.random() * (window.innerHeight - size),
   });
-  const [velocity, setVelocity] = useState({ 
-    x: (Math.random() - 0.5) * .9, 
-    y: (Math.random() - 0.5) * .9
+  const [velocity, setVelocity] = useState({
+    x: (Math.random() - 0.5) * 0.9,
+    y: (Math.random() - 0.5) * 0.9,
   });
 
   useEffect(() => {
     let animationFrameId;
 
     const animate = () => {
-      setPosition(prevPos => {
+      setPosition((prevPos) => {
         let newX = prevPos.x + velocity.x * 0.01;
         let newY = prevPos.y + velocity.y * 0.01;
         let newVelocityX = velocity.x;
@@ -145,7 +165,7 @@ const BouncingCircle = ({ imageSrc, size, glowColor }) => {
   }, [size, velocity]);
 
   return (
-    <div 
+    <div
       ref={circleRef}
       className="bouncing-circle"
       style={{
@@ -154,10 +174,38 @@ const BouncingCircle = ({ imageSrc, size, glowColor }) => {
         left: `${position.x}px`,
         top: `${position.y}px`,
         backgroundImage: `url(${imageSrc})`,
-        boxShadow: `0 0 20px ${glowColor}`
+        boxShadow: `0 0 20px ${glowColor}`,
       }}
     />
   );
+};
+
+// Custom hook to get screen size
+const useScreenSize = () => {
+  const [screenSize, setScreenSize] = useState("large");
+
+  const updateScreenSize = () => {
+    const width = window.innerWidth;
+    if (width > 1200) {
+      setScreenSize("xlarge");
+    } else if (width > 768) {
+      setScreenSize("large");
+    } else if (width > 576) {
+      setScreenSize("medium");
+    } else {
+      setScreenSize("small");
+    }
+  };
+
+  useEffect(() => {
+    updateScreenSize();
+    window.addEventListener("resize", updateScreenSize);
+    return () => {
+      window.removeEventListener("resize", updateScreenSize);
+    };
+  }, []);
+
+  return screenSize;
 };
 
 const Main = () => {
@@ -170,12 +218,13 @@ const Main = () => {
   const h2Ref = useRef(null);
   const buttonRef = useRef(null);
   const socialRef = useRef(null);
-  const [displayText, setDisplayText] = useState('Bliss');
+  const [displayText, setDisplayText] = useState("Bliss");
   const [isYellow, setIsYellow] = useState(false);
+  const screenSize = useScreenSize();
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let animationFrameId;
 
     const resizeCanvas = () => {
@@ -184,7 +233,7 @@ const Main = () => {
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     const particles = [];
 
@@ -227,63 +276,107 @@ const Main = () => {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      gsap.to(textRef.current, {
-        duration: 0.5,
-        opacity: 0,
-        scale: 0.5,
-        ease: "power2.inOut",
-        onComplete: () => {
-          setDisplayText((prevText) => {
-            const newText = prevText === 'Bliss' ? '$DOBS' : 'Bliss';
-            setIsYellow(newText === '$DOBS');
-            return newText;
-          });
-          gsap.to(textRef.current, { duration: 0.5, opacity: 1, scale: 1, ease: "power2.inOut" });
-        },
-      });
+      const text = textRef.current;
+      const newText = displayText === "Bliss" ? '$DOBS' : 'Bliss';
+      setDisplayText(newText);
+      setIsYellow(newText === "$DOBS");
+
+      gsap.fromTo(
+        text.children,
+        { opacity: 0, x: -10 },
+        { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, ease: "power2.inOut" }
+      );
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [displayText]);
 
   useEffect(() => {
-    gsap.set([h1Ref.current, textRef.current, h2Ref.current, buttonRef.current, socialRef.current.children], { 
-      opacity: 0, 
-      y: 50 
-    });
+    gsap.set(
+      [
+        h1Ref.current,
+        textRef.current,
+        h2Ref.current,
+        buttonRef.current,
+        socialRef.current.children,
+      ],
+      {
+        opacity: 0,
+        y: 50,
+      }
+    );
 
     const tl = gsap.timeline();
-    tl.to(h1Ref.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' })
-      .to(textRef.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
-      .to(h2Ref.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
-      .to(buttonRef.current, { duration: 1, opacity: 1, y: 0, ease: 'power3.out' }, '-=0.5')
-      .to(socialRef.current.children, { duration: 0.5, opacity: 1, y: 0, stagger: 0.1, ease: "back.out(1.7)" }, '-=0.5');
+    tl.to(h1Ref.current, { duration: 1, opacity: 1, y: 0, ease: "power3.out" })
+      .to(
+        textRef.current,
+        { duration: 1, opacity: 1, y: 0, ease: "power3.out" },
+        "-=0.5"
+      )
+      .to(
+        h2Ref.current,
+        { duration: 1, opacity: 1, y: 0, ease: "power3.out" },
+        "-=0.5"
+      )
+      .to(
+        buttonRef.current,
+        { duration: 1, opacity: 1, y: 0, ease: "power3.out" },
+        "-=0.5"
+      )
+      .to(
+        socialRef.current.children,
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+        },
+        "-=0.5"
+      );
   }, []);
+
+  const iconSize = screenSize === "xlarge" ? 50 : screenSize === "large" ? 40 : screenSize === "medium" ? 30 : 20;
 
   return (
     <div className="main-container">
       <div className="nav">
         <div className="logo">
-          <img src="/DOBS.png" alt="Rebel Dog Coin Logo" className="logo-image" />
-          $DOBS
+          <img
+            src="/DOBS.png"
+            alt="Rebel Dog Coin Logo"
+            className="logo-image"
+          />
+          <span className="currency-symbol">$</span>DOBS
         </div>
-        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-          <a href="#token" onClick={() => setIsMenuOpen(false)}>Token</a>
-          <a href="#nft" onClick={() => setIsMenuOpen(false)}>NFT</a>
-          <a href="#dapp" onClick={() => setIsMenuOpen(false)}>Dapp</a>
-          <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+
+        <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+          <a href="#about" onClick={() => setIsMenuOpen(false)}>
+            About
+          </a>
+          <a href="#token" onClick={() => setIsMenuOpen(false)}>
+            Token
+          </a>
+          <a href="#nft" onClick={() => setIsMenuOpen(false)}>
+            NFT
+          </a>
+          <a href="#dapp" onClick={() => setIsMenuOpen(false)}>
+            Dapp
+          </a>
+          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </a>
         </nav>
         <button className="launch-button">Join Us</button>
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`}>
+          <div className={`menu-icon ${isMenuOpen ? "open" : ""}`}>
             <span></span>
             <span></span>
             <span></span>
@@ -294,20 +387,36 @@ const Main = () => {
       <main className="content">
         <div className="text-content">
           <h1 ref={h1Ref}>
-            Solana's Rebel Dog <span ref={textRef} className={`animated-text ${isYellow ? 'yellow-text' : ''}`}>{displayText}</span>
+            Solana's Rebel Dog{" "}
+            <span
+              ref={textRef}
+              className={`animated-text ${isYellow ? "yellow-text" : ""}`}
+            >
+              {displayText.split('').map((char, index) => (
+                char === '$' ? <span key={index} className="currency-symbol">{char}</span> : <span key={index}>{char}</span>
+              ))}
+            </span>
           </h1>
           <h2 ref={h2Ref}>Rebel Dog on Solana.</h2>
           <CoolButton ref={buttonRef} />
           <div ref={socialRef} className="social-icons">
-            <a href="https://twitter.com" className="icon twitter"><FaTwitter /></a>
-            <a href="https://instagram.com" className="icon instagram"><FaInstagram /></a>
-            <a href="https://telegram.org" className="icon telegram"><FaTelegram /></a>
-            <a href="https://discord.com" className="icon discord"><FaDiscord /></a>
+            <a href="https://twitter.com" className="icon twitter">
+              <FaTwitter size={iconSize} />
+            </a>
+            <a href="https://instagram.com" className="icon instagram">
+              <FaInstagram size={iconSize} />
+            </a>
+            <a href="https://telegram.org" className="icon telegram">
+              <FaTelegram size={iconSize} />
+            </a>
+            <a href="https://discord.com" className="icon discord">
+              <FaDiscord size={iconSize} />
+            </a>
           </div>
         </div>
         <div className="image-container">
           <div
-            className={`image-wrapper ${isHovered ? 'hovered' : ''}`}
+            className={`image-wrapper ${isHovered ? "hovered" : ""}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             ref={cardRef}

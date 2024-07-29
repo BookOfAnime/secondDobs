@@ -70,7 +70,7 @@
   
   .highlight.animate {
     color: #FFD700;
-    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+    text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 5px #FFD700;
   }
   
   .animate-on-scroll {

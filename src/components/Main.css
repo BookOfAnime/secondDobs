@@ -1,10 +1,19 @@
 @font-face {
+  font-family: 'DT';
+  src: url('/DT.otf') format('opentype');
+}
+
+@font-face {
   font-family: 'This Cafe';
   src: url('/This Cafe.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'DT';
-  src: url('/DT.otf') format('opentype');
+
+.logo, .ticker__item, .cool-button-content {
+  font-family: 'DT', sans-serif;
+}
+
+.currency-symbol {
+  font-family: 'This Cafe', sans-serif;
 }
 
 :root {
@@ -22,7 +31,7 @@
 }
 
 body {
-  font-family: 'DT',Arial, 'This Cafe', sans-serif;
+  font-family: 'DT', Arial, 'This Cafe', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -31,7 +40,6 @@ body {
 
 .nav {
   display: flex;
-  position: absolute;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
@@ -47,8 +55,6 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--text-color);
-  position: relative;
-  left: 200px;
 }
 
 .logo-image {
@@ -96,8 +102,6 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
-  position: relative;
-  right: 200px;
 }
 
 .launch-button:hover {
@@ -182,7 +186,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0px;
+  padding: 0;
   max-width: 100vw;
   margin: 0 auto;
   gap: 10vw;
@@ -206,8 +210,6 @@ body {
 }
 
 .social-icons .icon {
-  width: 40px;
-  height: 40px;
   background-size: cover;
   border-radius: 50%;
   transition: transform 0.3s ease;
@@ -446,7 +448,6 @@ body {
   .image-container {
     margin-left: 0;
     margin-top: 20px;
-   
   }
 
   .text-content {
@@ -473,12 +474,9 @@ body {
   .launch-button {
     padding: 8px 16px;
     font-size: 0.9rem;
-    position: relative;
-    right: 10vw;
   }
   .logo {
-    position: relative;
-    left: 10vw;
+    left: auto;
   }
 
   .social-icons {
@@ -487,7 +485,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  main-container {
+  .main-container {
     padding-top: 80px;
     padding-bottom: 40px;
   }
@@ -526,10 +524,7 @@ body {
     width: 280px;
     height: 280px;
     margin-top: 20px;
-    position: relative;
-    top: 10vh;
   }
-
 
   .nav {
     flex-wrap: wrap;
@@ -541,7 +536,6 @@ body {
 
   .logo {
     font-size: 1.2rem;
-   
   }
 
   .logo-image {
@@ -588,7 +582,6 @@ body {
   }
 }
 
-
 @media (max-width: 576px) {
   .main-container {
     padding-top: 70px;
@@ -597,6 +590,8 @@ body {
 
   .nav {
     padding: 10px;
+    position: absolute;
+    top: 5px;
   }
 
   .content {
@@ -620,8 +615,9 @@ body {
     width: 220px;
     height: 220px;
     position: relative;
-    top: 5vh;
+    top: -20vh;
   }
+
   .cool-button {
     padding: 10px 20px;
     font-size: 14px;
@@ -629,12 +625,11 @@ body {
 
   .social-icons {
     gap: 8px;
-
   }
 
   .social-icons .icon {
-    width: 350px;
-    height: 350px;
+    width: 70px;
+    height: 70px;
   }
 
   .ticker__item {
@@ -642,4 +637,3 @@ body {
     padding: 0 1rem;
   }
 }
-
