@@ -24,12 +24,12 @@ const Roadmap = () => {
     {
       phase: "Phase 3",
       title: "Evolution",
-      description: "Further Use-Cases: SMYRO aims to enhance the Solana ecosystem, providing essential utilities for evolving user needs.",
+      description: "We're enhancing $DOBS by introducing a burn mechanism to reduce supply and increase value through transaction fees, burn events, and community milestones. New utility features like staking rewards, governance voting, and exclusive access to partner projects will offer more engagement opportunities. Additionally, an exclusive NFT collection purchasable with $DOBS will further boost its utility and value for all holders.",
     },
     {
       phase: "Phase 4",
       title: "Integration",
-      description: "Seamless integration of all features, creating a comprehensive ecosystem within the Solana network.",
+      description: "To expand the Dobs ecosystem, we will launch new memecoins and NFT projects, each providing unique value and utility for $DOBS holders. We will involve the community in the development of these projects through voting and feedback mechanisms, ensuring growth benefits everyone. Our focus on sustainable growth includes ongoing marketing efforts, community events, and strategic burns to support long-term success. These initiatives aim to continuously engage our community and drive the expansion of the Dobs ecosystem.",
     },
   ];
 
