@@ -14,7 +14,7 @@ const Roadmap = () => {
     {
       phase: "Phase 1",
       title: "Launch",
-      description: "DOBS will make his first appearing on July 29th, in Pump.Fun to ensure a fair launch",
+      description: "Launch the $DOBS token by initiating the token sale and listing it. Engage the community through social media campaigns, contests, and giveaways to build a strong, active following. Maintain transparency and build trust with regular updates and AMAs from the development team. Incentivize holding $DOBS by announcing benefits like exclusive access to upcoming projects and events. Our goals are to build a strong, engaged community and establish trust and transparency.",
     },
     {
       phase: "Phase 2",

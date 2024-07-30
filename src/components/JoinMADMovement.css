@@ -8,9 +8,11 @@
   src: url('/This Cafe.ttf') format('truetype');
 }
 
-.logo, .ticker__item, .cool-button-content, .mad-title, .mad-description {
-  font-family: 'DT', sans-serif;
+.logo, .ticker__item, .cool-button-content,  .mad-description {
+  font-family: Arial,'DT', sans-serif;
 }
+
+.mad
 
 .currency-symbol {
   font-family: 'This Cafe', sans-serif;

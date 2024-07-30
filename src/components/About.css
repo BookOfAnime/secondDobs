@@ -7,17 +7,19 @@
     padding: 2rem;
     padding-top: calc(var(--header-height) + 2rem);
     background: linear-gradient(to bottom, #0098ea, #0B0B0B); /* Gradient from blue to #0B0B0B */
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .about-title {
     font-family: 'DT','This Cafe', sans-serif;
-    font-size: 5.5rem;
+    font-size: 7.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 0.2rem; /* Add gap between letters */
     z-index: 1;
+    
   }
   
   .about-content {
@@ -86,17 +88,27 @@
   
   @media screen and (max-width: 768px) {
     .about-title {
-      font-size: 1.5rem;
+      font-size: 3.5rem;
+      position: relative;
+    top: -10vh;
+
+    }
+    .about {
+      width: 100vw;
     }
   
     .about-content {
       flex-direction: column;
       text-align: center;
       gap: 1rem;
+      
     }
   
     .about-image {
       margin-bottom: 1rem;
+      position: relative;
+      scale: 3;
+
     }
   
     .about-dog-image {
@@ -107,6 +119,15 @@
       width: 100%;
       padding: 0 1rem;
       font-size: 0.9rem;
+      position: relative;
+      top: 0px;
+      color: white;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+
     }
   
     .about-text p {

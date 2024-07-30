@@ -4,6 +4,7 @@
   color: #ffffff;
   overflow: hidden;
   position: relative;
+  font-family: Arial, Helvetica, sans-serif;
 }
   .features-title {
     font-size: 3rem;
@@ -11,6 +12,7 @@
     margin-bottom: 2rem;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: "DT";
   }
   
   .features-icon {
@@ -118,6 +120,7 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #ffffff;
+    font-family: 'DT';
   }
   
   .feature-card p {
