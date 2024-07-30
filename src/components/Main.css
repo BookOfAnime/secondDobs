@@ -169,7 +169,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: 100px;
-  background: url('./dbback.png') no-repeat center center;
+  background: url('../assets/dbback.png') no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
 }
