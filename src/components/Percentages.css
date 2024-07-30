@@ -30,7 +30,23 @@
     background: radial-gradient(circle, rgba(0, 152, 234, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
     z-index: 0;
   }
-  
+  .char {
+    position: absolute;
+    top: -40vh;
+    scale: .3;
+    padding: 10px;
+    z-index: 3;
+    left: 5px;
+  }
+  .charTwo {
+    position: absolute;
+    top: -40vh;
+    scale: .3;
+    padding: 10px;
+    z-index: 3;
+    left: 30vw;
+    transform: scaleX(-1); /* This mirrors the image horizontally */
+  }
   .chart-title {
     font-size: 3rem;
     font-weight: bold;

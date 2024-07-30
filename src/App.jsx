@@ -12,6 +12,7 @@ import FAQ from './components/FAQ';
 import JoinMADMovement from './components/JoinMADMovement';
 import Roadmap from './components/Roadmap';
 import Percentages from './components/Percentages';
+import Merchandise from './components/Merchandise';
 
 const App = () => {
   return (
@@ -25,8 +26,10 @@ const App = () => {
         <Roadmap />
         <Features />
         <Tokenomics />
-        <JoinMADMovement />
+       
         <Percentages />
+        <Merchandise />
+        <JoinMADMovement />
         <FAQ />
       </div>
     // </SmoothScroll>

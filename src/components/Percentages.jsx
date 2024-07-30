@@ -55,6 +55,9 @@ const Percentages = () => {
 
   return (
     <section ref={componentRef} className="percentages-section">
+           <img className="char" src='/otherChar.png'/>
+           <img className="charTwo" src='/otherChar.png'/>
+
       <div className="percentages-chart">
         <h2 className="chart-title">Tokenomics</h2>
         <div className="chart-content">
@@ -68,6 +71,8 @@ const Percentages = () => {
             </div>
           ))}
         </div>
+     
+
       </div>
     </section>
   );
