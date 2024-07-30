@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { FaTelegram, FaInstagram, FaTwitter, FaDiscord } from "react-icons/fa";
+import { Link } from 'react-scroll';
 import "./Main.css";
 
 gsap.registerPlugin(TextPlugin);
@@ -358,21 +359,22 @@ const Main = () => {
         </div>
 
         <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-          <a href="#about" onClick={() => setIsMenuOpen(false)}>
+          <Link to="about" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
             About
-          </a>
-          <a href="#token" onClick={() => setIsMenuOpen(false)}>
-            Token
-          </a>
-          <a href="#nft" onClick={() => setIsMenuOpen(false)}>
-            NFT
-          </a>
-          <a href="#dapp" onClick={() => setIsMenuOpen(false)}>
-            Dapp
-          </a>
-          <a href="#contact" onClick={() => setIsMenuOpen(false)}>
-            Contact
-          </a>
+          </Link>
+          
+          <Link to="howto" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+            How To
+          </Link>
+          <Link to="roadmap" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+            Roadmap
+          </Link>
+          <Link to="vision" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+            Vision
+          </Link>
+          <Link to="faq" smooth={true} duration={500} onClick={() => setIsMenuOpen(false)}>
+            FAQ
+          </Link>
         </nav>
         <button className="launch-button">Join Us</button>
         <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -403,9 +405,6 @@ const Main = () => {
             <a href="https://x.com/DOBS_SOLANA" className="icon twitter">
               <FaTwitter size={iconSize} />
             </a>
-            {/* <a href="https://instagram.com" className="icon instagram">
-              <FaInstagram size={iconSize} />
-            </a> */}
             <a href="https://t.me/+rWCW2H49ZH0xNzNh" className="icon telegram">
               <FaTelegram size={iconSize} />
             </a>

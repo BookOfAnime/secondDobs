@@ -35,7 +35,7 @@ const Features = () => {
   }, []);
 
   return (
-    <section className="features" ref={sectionRef}>
+    <section className="vision features" ref={sectionRef}>
       <h2 className="features-title" ref={titleRef}>Our Vision <span className="features-icon">🚀</span></h2>
       <div className="features-grid">
         {[

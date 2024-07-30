@@ -33,7 +33,7 @@ const Buy = () => {
   }, []);
 
   return (
-    <section className="buy" ref={buyRef}>
+    <section className="howto buy" ref={buyRef}>
       <div className="buy-content">
         <h2 className="buy-title animate-on-scroll">How to buy $DOBS</h2>
         <div className="buy-steps">

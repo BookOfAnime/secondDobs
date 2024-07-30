@@ -74,7 +74,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="faq-section" ref={sectionRef}>
+    <section className="faq faq-section" ref={sectionRef}>
       <div className="faq-overlay"></div>
       <div className="faq-content">
         <h2 className="faq-title" ref={titleRef}>Frequently Asked Questions</h2>

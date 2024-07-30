@@ -78,7 +78,7 @@ const Roadmap = () => {
   }, [roadmapData.length, isMobile]);
 
   return (
-    <section className={`roadmap-section ${isMobile ? "mobile" : ""}`} ref={triggerRef}>
+    <section className={`roadmap roadmap-section ${isMobile ? "mobile" : ""}`} ref={triggerRef}>
       <h2 className="roadmap-title">DOBSMAP</h2>
       <div className={`roadmap-container ${isMobile ? "mobile" : ""}`} ref={sectionRef}>
         <div className="roadmap-cards">
