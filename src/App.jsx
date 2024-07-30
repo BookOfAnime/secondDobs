@@ -11,6 +11,7 @@ import Main from './components/Main';
 import FAQ from './components/FAQ';
 import JoinMADMovement from './components/JoinMADMovement';
 import Roadmap from './components/Roadmap';
+import Percentages from './components/Percentages';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Features />
         <Tokenomics />
         <JoinMADMovement />
+        <Percentages />
         <FAQ />
       </div>
     // </SmoothScroll>
