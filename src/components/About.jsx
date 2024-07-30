@@ -43,7 +43,7 @@ const About = () => {
         <span className="animate-on-scroll">i</span>
         <span className="animate-on-scroll">s</span>
         <span className="animate-on-scroll">&nbsp;</span>
-        <span className="animate-on-scroll">$</span>
+        <span className="animate-on-scroll last">$</span>
         <span className="animate-on-scroll">D</span>
         <span className="animate-on-scroll">O</span>
         <span className="animate-on-scroll">B</span>

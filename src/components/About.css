@@ -1,141 +1,240 @@
+/* Base styles */
 .about {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    padding-top: calc(var(--header-height) + 2rem);
-    background: linear-gradient(to bottom, #0098ea, #0B0B0B); /* Gradient from blue to #0B0B0B */
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-top: calc(var(--header-height) + 2rem);
+  background: linear-gradient(to bottom, #0098ea, #0B0B0B);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-title {
+  font-family: 'DT','This Cafe', sans-serif;
+  font-size: 7.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  z-index: 1;
+}
+
+.last {
+  font-family: "This Cafe", Helvetica, sans-serif;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+}
+
+.about-image {
+  flex: 1;
+  position: relative;
+  filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
+  scale: 1.55;
+  z-index: -0;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: rgb(192, 216, 202);
+}
+
+.glow {
+  opacity: 0;
+  color: var(--glow-color);
+  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+  transition: opacity 0.5s ease-out;
+}
+
+.glow.animate {
+  opacity: 1;
+}
+
+.highlight {
+  color: #FFD700;
+  font-weight: bold;
+  transition: color 0.5s ease-in-out;
+}
+
+.highlight.animate {
+  color: #FFD700;
+  text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 5px #FFD700;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media Queries */
+
+/* Large devices (1200px and up) */
+@media screen and (min-width: 1201px) {
+  /* Default styles apply */
+}
+
+/* Large devices (between 993px and 1200px) */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
   .about-title {
-    font-family: 'DT','This Cafe', sans-serif;
-    font-size: 7.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 6rem;
+  }
+
+  .about-text p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium devices (between 769px and 992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .about-title {
+    font-size: 5rem;
+  }
+
+  .about-text p {
+    font-size: 1.3rem;
+  }
+
+  .about-image {
+    scale: 1.4;
+  }
+}
+
+/* Small devices (between 577px and 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .about-title {
+    font-size: 3.5rem;
+    position: relative;
+    top: -10vh;
+  }
+
+  .about {
+    width: 100vw;
+  }
+
+  .about-content {
+    flex-direction: column;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 0.2rem; /* Add gap between letters */
-    z-index: 1;
+    gap: 1rem;
+  }
+
+  .about-image {
+    margin-bottom: 1rem;
+    position: relative;
+    scale: 3;
+  }
+
+  .about-dog-image {
+    max-width: 150px;
+  }
+
+  .about-text {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1rem;
+    position: relative;
+    top: 0px;
+    color: white;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+  }
+
+  .about-text p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (between 481px and 576px) */
+@media screen and (min-width: 481px) and (max-width: 576px) {
+  .about-title {
+    font-size: 2.8rem;
+  }
+
+  .about-text {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about-image {
+    scale: 2.5;
+  }
+}
+
+/* Extra extra small devices (between 381px and 480px) */
+@media screen and (min-width: 381px) and (max-width: 480px) {
+  .about-title {
+    font-size: 2.3rem;
+  }
+
+  .about-text {
+    padding: 1rem;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     
   }
-  .last {
-    font-family: "This Cafe", Helvetica, sans-serif;
-  }
-  
-  .about-content {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    max-width: 1200px;
-  }
-  
-  .about-image {
-    flex: 1;
-    position: relative;
-    filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
-    scale: 1.55;
-    z-index: -0;
-  }
-  
-  .about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .about-text {
-    flex: 1;
-  }
-  
+
   .about-text p {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-    color: rgb(192, 216, 202);
+    font-size: 0.85rem;
   }
-  
-  .glow {
-    opacity: 0;
-    color: var(--glow-color);
-    text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
-    transition: opacity 0.5s ease-out;
-  }
-  
-  .glow.animate {
-    opacity: 1;
-  }
-  
-  .highlight {
-    color: #FFD700; /* Gold color for highlight */
-    font-weight: bold;
-    transition: color 0.5s ease-in-out;
-  }
-  
-  .highlight.animate {
-    color: #FFD700;
-    text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 5px #FFD700;
-  }
-  
-  .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-  }
-  
-  .animate-on-scroll.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  @media screen and (max-width: 768px) {
-    .about-title {
-      font-size: 3.5rem;
-      position: relative;
-    top: -10vh;
 
-    }
-    .about {
-      width: 100vw;
-    }
-  
-    .about-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-      
-    }
-  
-    .about-image {
-      margin-bottom: 1rem;
-      position: relative;
-      scale: 3;
-
-    }
-  
-    .about-dog-image {
-      max-width: 150px;
-    }
-  
-    .about-text {
-      width: 100%;
-      padding: 0 1rem;
-      font-size: 0.9rem;
-      position: relative;
-      top: 0px;
-      color: white;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-
-    }
-  
-    .about-text p {
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
+  .about-image {
+    scale: 2;
   }
-  
+}
+
+/* Extra extra extra small devices (380px and below) */
+@media screen and (max-width: 380px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.8rem;
+  }
+  .about-text {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+  .about-image {
+    scale: 1.8;
+  }
+}
