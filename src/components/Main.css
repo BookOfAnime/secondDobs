@@ -8,14 +8,6 @@
   src: url('/This Cafe.ttf') format('truetype');
 }
 
-.logo, .ticker__item, .cool-button-content {
-  font-family: 'DT', sans-serif;
-}
-
-.currency-symbol {
-  font-family: 'This Cafe', sans-serif;
-}
-
 :root {
   --primary-color: #0098ea;
   --secondary-color: #4169E1;
@@ -36,6 +28,14 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+.logo, .ticker__item, .cool-button-content {
+  font-family: 'DT', sans-serif;
+}
+
+.currency-symbol {
+  font-family: 'This Cafe', sans-serif;
 }
 
 .nav {
@@ -402,19 +402,6 @@ body {
   }
 }
 
-.social-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-  transform: scale(1.2);
-}
-
 .bouncing-circle {
   position: absolute;
   border-radius: 50%;
@@ -424,7 +411,6 @@ body {
   pointer-events: none;
 }
 
-/* Animations */
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -441,7 +427,7 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media (max-width: 1200px) {
   .content {
     flex-direction: column;
@@ -480,12 +466,18 @@ body {
     padding: 8px 16px;
     font-size: 0.9rem;
   }
+
   .logo {
     left: auto;
   }
 
   .social-icons {
     justify-content: center;
+  }
+
+  .main-container {
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -585,6 +577,7 @@ body {
     width: 100%;
   }
 }
+
 @media (max-width: 576px) {
   .main-container {
     padding-top: 70px;
@@ -608,7 +601,6 @@ body {
     font-size: 2.3rem;
     line-height: 1.2;
   }
-
   .text-content h2 {
     font-size: 1.1rem;
     margin-top: 5px;
@@ -641,526 +633,6 @@ body {
   }
 }
 
-.about {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  padding-top: calc(var(--header-height) + 2rem);
-  background: linear-gradient(to bottom, #0098ea, #0B0B0B);
-}
-
-.about-title {
-  font-family: 'DT','This Cafe', sans-serif;
-  font-size: 5.5rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 0.2rem;
-  z-index: 1;
-}
-
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1200px;
-}
-
-.about-image {
-  flex: 1;
-  position: relative;
-  filter: drop-shadow(0 0 0.75rem rgb(255, 217, 0));
-  scale: 1.55;
-  z-index: -0;
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-text p {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-  color: rgb(192, 216, 202);
-}
-
-.glow {
-  opacity: 0;
-  color: var(--glow-color);
-  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
-  transition: opacity 0.5s ease-out;
-}
-
-.glow.animate {
-  opacity: 1;
-}
-
-.highlight {
-  color: #FFD700;
-  font-weight: bold;
-  transition: color 0.5s ease-in-out;
-}
-
-.highlight.animate {
-  color: #FFD700;
-  text-shadow: 0 0 1px #FFD700, 0 0 1px #FFD700, 0 0 5px #FFD700;
-}
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-}
-
-.animate-on-scroll.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media screen and (max-width: 768px) {
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .about-image {
-    margin-bottom: 1rem;
-  }
-
-  .about-dog-image {
-    max-width: 150px;
-  }
-
-  .about-text {
-    width: 100%;
-    padding: 0 1rem;
-    font-size: 0.9rem;
-  }
-
-  .about-text p {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
-}
-
-.roadmap-section {
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: linear-gradient(to bottom, #0098ea, #0B0B0B);
-}
-
-.roadmap-container {
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-}
-
-.roadmap-title {
-  font-size: clamp(3rem, 8vw, 8rem);
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  position: fixed;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 5;
-  pointer-events: none;
-  text-shadow: 
-    0 0 10px rgba(64, 224, 208, 0.7),
-    0 0 20px rgba(64, 224, 208, 0.5),
-    0 0 30px rgba(64, 224, 208, 0.3);
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 
-      0 0 10px rgba(64, 224, 208, 0.7),
-      0 0 20px rgba(64, 224, 208, 0.5),
-      0 0 30px rgba(64, 224, 208, 0.3);
-  }
-  to {
-    text-shadow: 
-      0 0 20px rgba(64, 224, 208, 0.7),
-      0 0 30px rgba(64, 224, 208, 0.5),
-      0 0 40px rgba(64, 224, 208, 0.3);
-  }
-}
-
-.roadmap-cards {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  padding: 2rem 0;
-  position: relative;
-  z-index: 10;
-}
-
-.roadmap-card {
-  flex: 0 0 80vw;
-  height: 70vh;
-  background-image: url('/sec.webp');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  margin: 0 10vw;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.roadmap-card.last-card {
-  margin-right: 20vw;
-}
-
-.roadmap-card:hover,
-.roadmap-card.active {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.roadmap-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.roadmap-card-content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  color: #fff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.roadmap-card h3 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.roadmap-card p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .roadmap-section.mobile {
-    height: auto;
-    overflow: visible;
-  }
-
-  .roadmap-container.mobile {
-    height: auto;
-    flex-direction: column;
-  }
-
-  .roadmap-title {
-    position: absolute;
-    top: -10vh;
-    font-size: clamp(4rem, 6vw, 3rem);
-  }
-
-  .roadmap-cards {
-    flex-direction: column;
-    padding: 0 1rem;
-  }
-
-  .roadmap-card {
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-    min-height: 300px;
-    margin: 1rem 0;
-  }
-
-  .roadmap-card.last-card {
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-
-  .roadmap-card-content {
-    padding: 1.5rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .roadmap-card {
-    flex: 0 0 85vw;
-    margin: 0 7.5vw;
-  }
-
-  .roadmap-card.last-card {
-    margin-right: 15vw;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .roadmap-card {
-    flex: 0 0 75vw;
-    margin: 0 12.5vw;
-  }
-
-  .roadmap-card.last-card {
-    margin-right: 25vw;
-  }
-}
-
-.merchandise {
-  padding: 100px 0;
-  background: linear-gradient(to bottom, #0098ea, #0B0B0B);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.merchandise-title {
-  font-size: 3rem;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-}
-
-.slider {
-  position: relative;
-  width: 80%;
-  max-width: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-container {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.shirt {
-  flex: 0 0 100%;
-  max-width: 300px;
-  margin: 0 1rem;
-  opacity: 0.5;
-  transform: scale(0.8);
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  text-align: center;
-}
-
-.shirt.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.shirt img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.nav-button {
-  background: none;
-  border: none;
-  color: var(--text-color);
-  font-size: 2rem;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.nav-button.prev {
-  left: -50px;
-}
-
-.nav-button.next {
-  right: -50px;
-}
-
-@media (max-width: 768px) {
-  .slider-container {
-    transform: scale(0.8);
-  }
-
-  .nav-button {
-    font-size: 1.5rem;
-  }
-
-  .nav-button.prev {
-    left: -30px;
-  }
-
-  .nav-button.next {
-    right: -30px;
-  }
-}
-
-@media (max-width: 576px) {
-  .slider-container {
-    transform: scale(0.6);
-  }
-
-  .nav-button {
-    font-size: 1.2rem;
-  }
-
-  .nav-button.prev {
-    left: -20px;
-  }
-
-  .nav-button.next {
-    right: -20px;
-  }
-}
-
-.join-mad-movement {
-  background-image: url('/tweet-5.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255, 0, 204, 0.6), rgba(51, 51, 255, 0.6));
-  z-index: 1;
-}
-
-.mad-content {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 3rem;
-  text-align: center;
-  max-width: 600px;
-  width: 90%;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  z-index: 10;
-  position: relative;
-}
-
-.mad-title {
-  font-size: 3.5rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  font-weight: 900;
-  line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.mad-description {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.mad-social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.mad-social-button {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-.mad-social-button:hover {
-  transform: translateY(-5px) rotate(10deg);
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4);
-}
-
-.mad-social-button img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1);
-}
-
-.particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 5;
-}
-
-@media (max-width: 768px) {
-  .mad-content {
-    padding: 2rem;
-  }
-
-  .mad-title {
-    font-size: 2.5rem;
-  }
-
-  .mad-description {
-    font-size: 1rem;
-  }
-
-  .mad-social-button {
-    padding: 0.8rem;
-  }
-
-  .mad-social-button img {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-.mad-title {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Additional responsive adjustments */
 @media (max-width: 480px) {
   .main-container {
     padding-top: 60px;
@@ -1194,75 +666,12 @@ body {
     height: 50px;
   }
 
-  .mad-title {
-    font-size: 2rem;
-  }
-
-  .mad-description {
-    font-size: 0.9rem;
-  }
-
-  .mad-social-button {
-    padding: 0.6rem;
-  }
-
-  .mad-social-button img {
-    width: 20px;
-    height: 20px;
-  }
   .nav {
     position: relative;
     top: 10px;
   }
 }
 
-/* Ensure background image covers all screen sizes */
-@media (max-width: 1200px), (max-height: 800px) {
-  .main-container {
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-/* Adjust background for very wide screens */
-@media (min-width: 1921px) {
-  .main-container {
-    background-size: cover;
-    background-position: center top;
-  }
-}
-
-/* Adjust background for very tall screens */
-@media (min-height: 1081px) {
-  .main-container {
-    background-size: cover;
-    background-position: center center;
-  }
-}
-
-/* Fine-tune background for different aspect ratios */
-@media (aspect-ratio: 16/9), (aspect-ratio: 16/10) {
-  .main-container {
-    background-size: cover;
-    background-position: center 20%;
-  }
-}
-
-@media (aspect-ratio: 4/3) {
-  .main-container {
-    background-size: cover;
-    background-position: center 30%;
-  }
-}
-
-@media (aspect-ratio: 3/2) {
-  .main-container {
-    background-size: cover;
-    background-position: center 25%;
-  }
-}
-
-/* Additional adjustments for very small screens */
 @media (max-width: 320px) {
   .text-content h1 {
     font-size: 1.8rem;
@@ -1288,7 +697,20 @@ body {
   }
 }
 
-/* Ensure content is visible on very large screens */
+@media (min-width: 1921px) {
+  .main-container {
+    background-size: cover;
+    background-position: center top;
+  }
+}
+
+@media (min-height: 1081px) {
+  .main-container {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
 @media (min-width: 2560px) {
   .content {
     max-width: 1800px;
