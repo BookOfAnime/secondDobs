@@ -442,6 +442,8 @@ body {
   .image-container {
     margin-left: 0;
     margin-top: 20px;
+    position: relative;
+    top: -15vh;
   }
 
   .text-content {
@@ -681,8 +683,10 @@ body {
   }
   .nav {
     padding: 5px;
-    height: 10vh;
+    height: ;
     background-color: #ffffffa1;
+    position: absolute;
+    top: -20px;
 
   }
 
