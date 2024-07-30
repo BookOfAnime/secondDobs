@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import { FaTelegram, FaInstagram, FaTwitter, FaDiscord } from "react-icons/fa";
+import { FaTelegram, FaTwitter, FaDiscord } from "react-icons/fa";
 import { Link } from 'react-scroll';
 import "./Main.css";
 
@@ -181,7 +181,6 @@ const BouncingCircle = ({ imageSrc, size, glowColor }) => {
   );
 };
 
-// Custom hook to get screen size
 const useScreenSize = () => {
   const [screenSize, setScreenSize] = useState("large");
 
@@ -212,6 +211,7 @@ const useScreenSize = () => {
 const Main = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const containerRef = useRef(null);
   const cardRef = useRef(null);
   const canvasRef = useRef(null);
   const textRef = useRef(null);
@@ -342,12 +342,46 @@ const Main = () => {
         },
         "-=0.5"
       );
+
+    // Add particle effect
+    const particleCount = 50;
+    const particles = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      containerRef.current.appendChild(particle);
+      particles.push(particle);
+
+      gsap.set(particle, {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        scale: Math.random() * 0.5 + 0.5
+      });
+
+      animateParticle(particle);
+    }
+
+    function animateParticle(particle) {
+      gsap.to(particle, {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        duration: Math.random() * 10 + 5,
+        ease: "none",
+        onComplete: () => animateParticle(particle)
+      });
+    }
+
+    return () => {
+      particles.forEach(particle => particle.remove());
+    };
   }, []);
 
   const iconSize = screenSize === "xlarge" ? 50 : screenSize === "large" ? 40 : screenSize === "medium" ? 30 : 20;
 
   return (
-    <div className="main-container">
+    <div className="main-container" ref={containerRef}>
+      <div className="background-overlay"></div>
       <div className="nav">
         <div className="logo">
           <img
@@ -402,7 +436,7 @@ const Main = () => {
           <h2 ref={h2Ref}>Rebel Dog on Solana.</h2>
           <CoolButton ref={buttonRef} />
           <div ref={socialRef} className="social-icons">
-            <a href="https://x.com/DOBS_SOLANA" className="icon twitter">
+          <a href="https://x.com/DOBS_SOLANA" className="icon twitter">
               <FaTwitter size={iconSize} />
             </a>
             <a href="https://t.me/+rWCW2H49ZH0xNzNh" className="icon telegram">
