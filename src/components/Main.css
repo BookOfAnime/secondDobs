@@ -45,7 +45,8 @@ body {
   padding: 20px;
   width: 100%;
   background: transparent;
-  top: 5vh;
+  position: relative;
+  top: -6vh;
   z-index: 100;
 }
 
@@ -60,7 +61,7 @@ body {
 .logo-image {
   width: 40px;
   height: 40px;
-  margin-right: 10px;
+  margin-left: 100px;
 }
 
 .nav-links {
@@ -102,6 +103,7 @@ body {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-right: 100px;
 }
 
 .launch-button:hover {
@@ -442,12 +444,13 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 100px;
+    top: 0;
   }
 
   .image-container {
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: -50px;
+    margin-bottom: 100px;
   }
 
   .text-content {
@@ -529,8 +532,9 @@ body {
   .nav {
     flex-wrap: wrap;
     justify-content: space-between;
+    position: relative;
     padding: 15px;
-    top: 0;
+    top: -10vh;
     background-color: rgba(0, 152, 234, 0.9);
   }
 
@@ -566,9 +570,7 @@ body {
   }
 
   .launch-button {
-    order: 2;
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    display: none;
   }
 
   .menu-toggle {
@@ -589,9 +591,10 @@ body {
   }
 
   .nav {
-    padding: 10px;
+    padding: 5px;
     position: absolute;
-    top: 5px;
+    top: 0px;
+    height: 5vh;
   }
 
   .content {
@@ -615,7 +618,7 @@ body {
     width: 220px;
     height: 220px;
     position: relative;
-    top: -20vh;
+    top: -5vh;
   }
 
   .cool-button {
@@ -635,5 +638,11 @@ body {
   .ticker__item {
     font-size: 1.5rem;
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .launch-button {
+    display: none;
   }
 }
