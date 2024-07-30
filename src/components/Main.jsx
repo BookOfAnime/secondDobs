@@ -400,16 +400,16 @@ const Main = () => {
           <h2 ref={h2Ref}>Rebel Dog on Solana.</h2>
           <CoolButton ref={buttonRef} />
           <div ref={socialRef} className="social-icons">
-            <a href="https://twitter.com" className="icon twitter">
+            <a href="https://x.com/DOBS_SOLANA" className="icon twitter">
               <FaTwitter size={iconSize} />
             </a>
-            <a href="https://instagram.com" className="icon instagram">
+            {/* <a href="https://instagram.com" className="icon instagram">
               <FaInstagram size={iconSize} />
-            </a>
-            <a href="https://telegram.org" className="icon telegram">
+            </a> */}
+            <a href="https://t.me/+rWCW2H49ZH0xNzNh" className="icon telegram">
               <FaTelegram size={iconSize} />
             </a>
-            <a href="https://discord.com" className="icon discord">
+            <a href="https://discord.gg/X2r9G6f6ad" className="icon discord">
               <FaDiscord size={iconSize} />
             </a>
           </div>
