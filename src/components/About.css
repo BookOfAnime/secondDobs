@@ -21,6 +21,9 @@
     z-index: 1;
     
   }
+  .last {
+    font-family: "This Cafe", Helvetica, sans-serif;
+  }
   
   .about-content {
     display: flex;
