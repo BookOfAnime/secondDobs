@@ -126,8 +126,8 @@
 
   .roadmap-title {
     position: absolute;
-    top: 2rem;
-    font-size: clamp(2rem, 6vw, 3rem);
+    top: -10vh;
+    font-size: clamp(4rem, 6vw, 3rem);
   }
 
   .roadmap-cards {

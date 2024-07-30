@@ -79,8 +79,12 @@ const JoinMADMovement = () => {
     <div className="join-mad-movement" ref={containerRef}>
       <div className="background-overlay"></div>
       <div className="mad-content">
-        <h1 ref={titleRef} className="mad-title">Join the $DOBS<br/>MAD Meme Club</h1>
-        <p ref={descriptionRef} className="mad-description">Let's have fun while making BANK! Follow us for updates so juicy, you might get a buzz!</p>
+        <h1 ref={titleRef} className="mad-title">
+          Join the <span className="currency-symbol">$</span>DOBS<br />MAD Meme Club
+        </h1>
+        <p ref={descriptionRef} className="mad-description">
+          Let's have fun while making BANK! Follow us for updates so juicy, you might get a buzz!
+        </p>
         <div ref={socialRef} className="mad-social-buttons">
           {socialLinks.map((social, index) => (
             <a 
