@@ -174,7 +174,7 @@ body {
   padding-top: 60px;
   background: url('../assets/dbback.png') no-repeat center center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 .background-tickers {
@@ -727,6 +727,13 @@ body {
 @media (min-width: 769px) {
   .main-container {
     background-attachment: fixed;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .main-container {
+    background-size: cover;
+    background-position: center center;
   }
 }
 
