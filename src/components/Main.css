@@ -12,7 +12,7 @@
   --primary-color: #0098ea;
   --secondary-color: #4169E1;
   --accent-color: #8A2BE2;
-  --background-color: #0098ea;
+  --background-color: #ffffff;
   --text-color: #FFFFFF;
 }
 
@@ -22,12 +22,15 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'DT', Arial, 'This Cafe', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 .logo, .ticker__item, .cool-button-content {
@@ -430,7 +433,8 @@ body {
 /* Media Queries */
 @media (max-width: 1200px) {
   .nav {
-    margin-top: 20px;
+    position: relative;
+    top: 0vh;
   }
   .content {
     flex-direction: column;
@@ -462,8 +466,6 @@ body {
     gap: 10px;
     padding: 5px 10px;
     background-color: #ffffffa1;
-    
-
   }
 
   .nav-links a {
@@ -492,17 +494,16 @@ body {
 
   .nav {
     position: absolute;
-    top: -2vh;
+    top: 0;
     left: 0;
     right: 0;
     padding: 0px;
     background-color: #ffffffa1;
-    
   }
 
   .content {
     margin-top: 30vh;
-    top: 0;
+    top: -10vh;
     gap: 20px;
   }
 
@@ -534,7 +535,7 @@ body {
     height: 280px;
     margin-top: 20px;
     position: relative;
-    top: -15vh
+    top: 0;
   }
 
   .logo {
@@ -589,6 +590,8 @@ body {
 @media (max-width: 576px) {
   .nav {
     padding: 20px;
+    position: relative;
+    top: -20px;
   }
   .logo {
     font-size: 2rem;
@@ -629,11 +632,12 @@ body {
 
   .social-icons {
     gap: 8px;
+    justify-content: center;
   }
 
   .social-icons .icon {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
   }
 
   .ticker__item {
@@ -642,13 +646,12 @@ body {
   }
   .nav-links {
     background-color: #ffffffa1;
-
   }
 }
 
 @media (max-width: 480px) {
   .content {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
 
   .text-content h1 {
@@ -662,34 +665,38 @@ body {
   .image-container {
     width: 180px;
     height: 180px;
-    position: absolute;
-    top: 45vh;
+    position: relative;
+    top: -10vh;
   }
 
   .cool-button {
     padding: 8px 16px;
     font-size: 1rem;
   }
- 
+
+  .social-icons {
+    justify-content: center;
+    gap: 10px;
+  }
 
   .social-icons .icon {
     width: 50px;
     height: 50px;
   }
+
   .logo {
     position: relative;
     left: -20vw;
-    scale: .8;
+    scale: 0.8;
   }
+
   .nav {
     padding: 5px;
-    height: ;
+    height: 10vh;
     background-color: #ffffffa1;
     position: absolute;
-    top: -20px;
-
+    top: 0;
   }
-
 }
 
 @media (max-width: 320px) {
