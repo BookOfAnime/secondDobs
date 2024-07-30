@@ -1210,6 +1210,10 @@ body {
     width: 20px;
     height: 20px;
   }
+  .nav {
+    position: relative;
+    top: 10px;
+  }
 }
 
 /* Ensure background image covers all screen sizes */

@@ -49,9 +49,7 @@
 
 .about-text {
   flex: 1;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ 
     padding: 10px;
 }
 
@@ -182,9 +180,9 @@
 
   .about-text {
     padding: 1.5rem;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* background: linear-gradient(135deg, #00c6ff, #0072ff);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   }
 
   .about-text p {
@@ -204,9 +202,9 @@
 
   .about-text {
     padding: 1rem;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* background: linear-gradient(135deg, #00c6ff, #0072ff);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     
   }
 
@@ -229,9 +227,9 @@
     font-size: 0.8rem;
   }
   .about-text {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* background: linear-gradient(135deg, #00c6ff, #0072ff);
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     padding: 10px;
   }
   .about-image {
