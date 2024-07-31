@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FaTelegram, FaInstagram, FaTwitter, FaTiktok } from 'react-icons/fa';
+import { FaTelegram, FaInstagram, FaTwitter, FaTiktok, FaDiscord } from 'react-icons/fa';
 import './JoinMADMovement.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,10 +13,10 @@ const JoinMADMovement = () => {
   const socialRef = useRef(null);
 
   const socialLinks = [
-    { name: 'Telegram', icon: FaTelegram, url: 'https://t.me/MADmovementchannel' },
-    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/madmovementofficial/' },
-    { name: 'Twitter', icon: FaTwitter, url: 'https://twitter.com/MADMovement_' },
-    { name: 'TikTok', icon: FaTiktok, url: 'https://www.tiktok.com/@madmovementofficial' },
+    { name: 'Telegram', icon: FaTelegram, url: 'https://t.me/+rWCW2H49ZH0xNzNh' },
+    { name: 'Discord', icon: FaDiscord, url: 'https://discord.gg/X2r9G6f6ad' },
+    { name: 'Twitter', icon: FaTwitter, url: 'https://x.com/DOBS_SOLANA' },
+
   ];
 
   useEffect(() => {
@@ -83,7 +83,7 @@ const JoinMADMovement = () => {
           Join the <span className="currency-symbol">$</span>DOBS<br />Meme Club
         </h1>
         <p ref={descriptionRef} className="mad-description">
-          Let's have fun while making BANK! Follow us for updates so juicy, you might get a buzz!
+        The resistance needs you comrade!
         </p>
         <div ref={socialRef} className="mad-social-buttons">
           {socialLinks.map((social, index) => (
