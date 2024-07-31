@@ -268,11 +268,12 @@
   }
   .char {
     position: absolute;
-    top: -45px
+    top: -150px;
+    left: -15vh;
   }
   .charTwo {
     position: absolute;
-    top: -45px;
+    top: -150px;
 
   }
 
