@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: center;
 }
+.dolla{
+ font-family: "This Cafe";
+}
 
 .buy-content {
   max-width: 1200px;

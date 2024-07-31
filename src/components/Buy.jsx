@@ -35,7 +35,7 @@ const Buy = () => {
   return (
     <section className="howto buy" ref={buyRef}>
       <div className="buy-content">
-        <h2 className="buy-title animate-on-scroll">How to buy $DOBS</h2>
+        <h2 className="buy-title animate-on-scroll">How to buy <span className='dolla'>$</span>DOBS</h2>
         <div className="buy-steps">
           <div className="buy-step animate-on-scroll">
             <div className="step-icon">
