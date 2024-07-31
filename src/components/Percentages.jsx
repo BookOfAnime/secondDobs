@@ -92,8 +92,8 @@ const Percentages = () => {
           ))}
           <div className="tokenomics-row">
             <div className="tokenomics-box" onClick={() => handleCopy('HhJpBhRRn4g56VsyLuT8...')}>
-              <span className="tokenomics-label">Click here to copy address:</span>
-              <span className="tokenomics-value">HhJpBhRRn4g56VsyLuT8...</span>
+              <span className="tokenomics-label">Click here to copy address :</span>
+              <span className="tokenomics-value">Coming Soon:</span>
             </div>
           </div>
         </div>

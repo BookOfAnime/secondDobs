@@ -80,8 +80,8 @@ const Tokenomics = () => {
         </div>
         <div className="tokenomics-row">
           <div className="tokenomics-box full-width glow-on-hover" onClick={() => handleCopy('HhJpBhRRn4g56VsyLuT8...')}>
-            <span className="tokenomics-label">Token Address</span>
-            <span className="tokenomics-value">HhJpBhRRn4g56VsyLuT8...</span>
+            <span className="tokenomics-label">Token Address:</span>
+            <span className="tokenomics-value">Coming Soon</span>
           </div>
         </div>
       </div>

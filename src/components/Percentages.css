@@ -99,7 +99,6 @@
   box-shadow: 0 0 15px rgba(0, 152, 234, 0.7);
   transition: width 1s ease-out;
 }
-
 .percentage-value {
   color: #0098ea;
   font-size: 1.2rem;
@@ -113,6 +112,9 @@
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+}
+.tokenomics-value {
+  font-size: larger;
 }
 
 .token-address {
