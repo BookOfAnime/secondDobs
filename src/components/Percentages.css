@@ -108,8 +108,51 @@
   text-align: left;
 }
 
-@media (min-width: 993px) and (max-width: 1200px) {
-  /* Styles for screens from 993px to 1200px */
+.tokenomics-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.token-address {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #40E0D0;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 100%;
+  word-wrap: break-word; /* Ensure long text wraps within the container */
+}
+
+.token-address:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #40E0D0;
+  color: #0B0B0B;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.copy-notification.show {
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
   .percentages-chart {
     max-width: 800px;
   }
@@ -122,14 +165,7 @@
     font-size: 1.1rem;
     width: 160px;
   }
-  .char {
-    position: absolute;
-    top: -230px;
-  }
-  .charTwo {
-    position: absolute;
-    top: -230px;
-  }
+
   .percentage-bar-container {
     height: 32px;
   }
@@ -137,11 +173,80 @@
   .percentage-value {
     font-size: 1.1rem;
   }
+
+  .token-address {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 0.8rem; /* Adjust padding for smaller screens */
+  }
 }
 
+@media (max-width: 1080px) {
+  .percentages-chart {
+    max-width: 700px;
+    padding: 2rem;
+  }
 
-@media (min-width: 577px) and (max-width: 768px) {
-  /* Styles for screens from 577px to 768px */
+  .chart-title {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .percentage-label {
+    font-size: 1rem;
+    width: 140px;
+    margin-right: 1rem;
+  }
+
+  .percentage-bar-container {
+    height: 28px;
+    margin-right: 1rem;
+  }
+
+  .percentage-value {
+    font-size: 1rem;
+    width: 50px;
+  }
+
+  .token-address {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 0.8rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .percentages-chart {
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .chart-title {
+    font-size: 2.35rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .percentage-label {
+    font-size: 1rem;
+    width: 140px;
+    margin-right: 1rem;
+  }
+
+  .percentage-bar-container {
+    height: 28px;
+    margin-right: 1rem;
+  }
+
+  .percentage-value {
+    font-size: 1rem;
+    width: 50px;
+  }
+
+  .token-address {
+    font-size: 0.85rem; /* Adjust font size for smaller screens */
+    padding: 0.7rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
   .percentages-section {
     padding: 1.5rem;
   }
@@ -157,13 +262,14 @@
   }
 
   .char {
+    position: absolute;
     top: -20vh;
     left: -20vh;
   }
 
   .charTwo {
+    position: absolute;
     top: -20vh;
-    left: 20vw;
   }
 
   .percentage-row {
@@ -182,10 +288,14 @@
   .percentage-value {
     font-size: 0.9rem;
   }
+
+  .token-address {
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+    padding: 0.6rem; /* Adjust padding for smaller screens */
+  }
 }
 
-@media (min-width: 426px) and (max-width: 576px) {
-  /* Styles for screens from 426px to 576px */
+@media (max-width: 576px) {
   .percentages-section {
     padding: 1rem;
   }
@@ -197,16 +307,6 @@
   .chart-title {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-  }
-
-  .char {
-    top: -15vh;
-    left: -15vw;
-  }
-
-  .charTwo {
-    top: -15vh;
-    left: 15vw;
   }
 
   .percentage-row {
@@ -231,10 +331,14 @@
     width: 100%;
     text-align: right;
   }
+
+  .token-address {
+    font-size: 0.75rem; /* Adjust font size for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
 }
 
-@media (min-width: 376px) and (max-width: 425px) {
-  /* Styles for screens from 376px to 425px */
+@media (max-width: 425px) {
   .chart-title {
     font-size: 1.5rem;
   }
@@ -245,22 +349,27 @@
   }
 
   .char {
-    top: -10px;
-    left: -15vw;
+    position: absolute;
+    top: -10vh;
+    left: -30vw;
   }
 
   .charTwo {
-    top: -10px;
-    left: 15vw;
+    position: absolute;
+    top: -10vh;
   }
 
   .percentage-bar-container {
     height: 20px;
   }
+
+  .token-address {
+    font-size: 0.7rem; /* Adjust font size for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
 }
 
-@media (min-width: 321px) and (max-width: 375px) {
-  /* Styles for screens from 321px to 375px */
+@media (max-width: 400px) {
   .chart-title {
     font-size: 1.5rem;
   }
@@ -271,22 +380,58 @@
   }
 
   .char {
-    top: 10px;
-    left: -15vw;
+    position: absolute;
+    top: -4vh;
+    left: -30vw;
   }
 
   .charTwo {
-    top: 10px;
-    left: 15vw;
+    position: absolute;
+    top: -4vh;
   }
 
   .percentage-bar-container {
     height: 20px;
+  }
+
+  .token-address {
+    font-size: 0.7rem; /* Adjust font size for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 376px) {
+  .chart-title {
+    font-size: 1.5rem;
+  }
+
+  .percentage-label,
+  .percentage-value {
+    font-size: 0.8rem;
+  }
+
+  .char {
+    position: absolute;
+    top: -7vh;
+    left: -30vw;
+  }
+
+  .charTwo {
+    position: absolute;
+    top: -7vh;
+  }
+
+  .percentage-bar-container {
+    height: 20px;
+  }
+
+  .token-address {
+    font-size: 0.7rem; /* Adjust font size for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
   }
 }
 
 @media (max-width: 320px) {
-  /* Styles for screens up to 320px */
   .chart-title {
     font-size: 1.5rem;
   }
@@ -297,16 +442,22 @@
   }
 
   .char {
-    top: 40px;
-    left: -15vw;
+    position: absolute;
+    top: -3.5vh;
+    left: -30vw;
   }
 
   .charTwo {
-    top: 40px;
-    left: 15vw;
+    position: absolute;
+    top: -3.5vh;
   }
 
   .percentage-bar-container {
     height: 20px;
+  }
+
+  .token-address {
+    font-size: 0.65rem; /* Adjust font size for smaller screens */
+    padding: 0.4rem; /* Adjust padding for smaller screens */
   }
 }

@@ -126,6 +126,10 @@
 }
 
 @media (max-width: 1024px) {
+  .faq-section {
+    background: url('/char.png') center center / cover no-repeat;
+  }
+
   .faq-content {
     padding: 2rem;
   }
@@ -138,6 +142,7 @@
 @media (max-width: 768px) {
   .faq-section {
     padding: 3rem 1.5rem;
+    background: url('/char.png') center center / cover no-repeat;
   }
 
   .faq-content {
@@ -161,6 +166,10 @@
 }
 
 @media (max-width: 480px) {
+  .faq-section {
+    background: url('/char.png') center center / cover no-repeat;
+  }
+
   .faq-title {
     font-size: 2rem;
   }

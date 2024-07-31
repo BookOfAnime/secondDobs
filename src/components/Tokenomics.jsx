@@ -60,7 +60,7 @@ const Tokenomics = () => {
     <section className="tokenomics" ref={sectionRef}>
       <div className="tokenomics-title-container" ref={titleRef}>
         <img src="/otherChar.png" alt="Character" className="tokenomics-character" />
-        <h2 className="tokenomics-title glow-effect">Tokenomics</h2>
+        <h2 className="tokenomics-title glow-effect">Address</h2>
         <img src="/otherChar.png" alt="Character" className="tokenomics-character mirrored" />
       </div>
       <div className="tokenomics-container" ref={containerRef}>

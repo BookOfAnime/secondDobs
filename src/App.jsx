@@ -25,7 +25,7 @@ const App = () => {
         <Buy />
         <Roadmap />
         <Features />
-        <Tokenomics />
+        {/* <Tokenomics /> */}
        
         <Percentages />
         <Merchandise />
