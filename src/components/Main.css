@@ -260,6 +260,11 @@ body {
   transform: scale(1.05) translateZ(30px);
 }
 
+.image-wrapper.hovered {
+  box-shadow: 0 0 20px #ff007f, 0 0 50px 20px #ff007f;
+  animation: hover-glow 1.5s infinite alternate;
+}
+
 .particle-canvas {
   position: absolute;
   top: -10px;
@@ -414,6 +419,15 @@ body {
   pointer-events: none;
 }
 
+@keyframes hover-glow {
+  0% {
+    box-shadow: 0 0 20px #ff007f, 0 0 50px 20px #ff007f;
+  }
+  100% {
+    box-shadow: 0 0 20px #00ffbf, 0 0 50px 20px #00ffbf;
+  }
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -428,6 +442,9 @@ body {
 
 .image-wrapper {
   animation: float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform;
 }
 
 /* Media Queries */

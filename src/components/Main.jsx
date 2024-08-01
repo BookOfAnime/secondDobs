@@ -344,6 +344,28 @@ const Main = () => {
       );
   }, []);
 
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = cardRef.current.getBoundingClientRect();
+    const x = ((e.clientX - left) / width - 0.5) * 30;
+    const y = ((e.clientY - top) / height - 0.5) * -30;
+
+    gsap.to(cardRef.current, {
+      rotationY: x,
+      rotationX: y,
+      transformPerspective: 1000,
+      ease: "power3.out",
+    });
+  };
+
+  const handleMouseLeave = () => {
+    gsap.to(cardRef.current, {
+      rotationY: 0,
+      rotationX: 0,
+      transformPerspective: 1000,
+      ease: "power3.out",
+    });
+  };
+
   const iconSize = screenSize === "xlarge" ? 50 : screenSize === "large" ? 40 : screenSize === "medium" ? 30 : 20;
 
   return (
@@ -417,7 +439,11 @@ const Main = () => {
           <div
             className={`image-wrapper ${isHovered ? "hovered" : ""}`}
             onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseLeave={() => {
+              setIsHovered(false);
+              handleMouseLeave();
+            }}
+            onMouseMove={handleMouseMove}
             ref={cardRef}
           >
             <img src="/main.jpeg" alt="Rebel Dog" />
