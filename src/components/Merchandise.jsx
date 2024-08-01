@@ -4,9 +4,9 @@ import './Merchandise.css';
 const Merchandise = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const shirts = [
-    { id: 1, name: "Classic Logo Tee", image: "/shirtOne.png", price: "$24.99" },
-    { id: 2, name: "Crypto Enthusiast", image: "/shirtTwo.png", price: "$29.99" },
-    { id: 3, name: "To The Moon", image: "/shirtThree.png", price: "$27.99" },
+    { id: 1, name: "Classic Logo Tee", image: "/shirtOne.png", price: "Coming Soon" },
+    { id: 2, name: "Crypto Enthusiast", image: "/shirtTwo.png", price: "Coming Soon" },
+    { id: 3, name: "To The Moon", image: "/shirtThree.png", price: "Coming Soon" },
   ];
 
   const nextSlide = () => {
@@ -24,7 +24,10 @@ const Merchandise = () => {
 
   return (
     <section className="merchandise-section">
-      <h2 className="merchandise-title">Merchandise</h2>
+      <h2 className="merchandise-title">Merchandise
+        
+      </h2>
+     
       <div className="slider-container">
         <button className="slider-button prev" onClick={prevSlide}>&#10094;</button>
         <div className="slider">

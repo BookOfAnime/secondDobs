@@ -30,7 +30,7 @@ const App = () => {
         <Percentages />
         <Merchandise />
         <JoinMADMovement />
-        <FAQ />
+        {/* <FAQ /> */}
       </div>
     // </SmoothScroll>
   );
