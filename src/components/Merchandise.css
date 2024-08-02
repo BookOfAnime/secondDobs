@@ -1,141 +1,194 @@
 .merchandise-section {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #000814;
-    padding: 2rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000814;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.merchandise-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0098ea;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 152, 234, 0.5);
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 152, 234, 0.3);
+}
+
+.slide img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.shirt-info {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.shirt-info h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.shirt-info p {
+  font-size: 1rem;
+  color: #0098ea;
+  font-weight: bold;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 152, 234, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: rgba(0, 152, 234, 0.8);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.coming-soon-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-10deg);
+  width: 200%; /* Increased width to ensure full coverage */
+  height: 60px;
+  background-color: #ff0000;
+  overflow: hidden;
+  z-index: 1000; /* Ensure it's on top of everything */
+}
+
+.coming-soon-text {
+  position: absolute;
+  white-space: nowrap;
+  animation: moveText 20s linear infinite;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 60px;
+  width: 200%; /* Ensure text fills the entire bar */
+  text-align: center;
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateX(0%);
   }
-  
+  100% {
+    transform: translateX(-50%); /* Only move half the width to create seamless loop */
+  }
+}
+
+@media (max-width: 768px) {
   .merchandise-title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #0098ea;
-    margin-bottom: 3rem;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0, 152, 234, 0.5);
+    font-size: 2.5rem;
   }
-  
+
   .slider-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .slider {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .slide {
-    position: absolute;
-    width: 300px;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0, 152, 234, 0.3);
   }
-  
-  .slide img {
-    width: 80%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
+
+  .slide {
+    width: 250px;
+    height: 350px;
   }
-  
-  .shirt-info {
-    margin-top: 1rem;
-    text-align: center;
+
+  .coming-soon-bar {
+    height: 50px;
   }
-  
-  .shirt-info h3 {
+
+  .coming-soon-text {
     font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
+    line-height: 50px;
   }
-  
-  .shirt-info p {
+}
+
+@media (max-width: 576px) {
+  .merchandise-title {
+    font-size: 2rem;
+  }
+
+  .slider-container {
+    height: 350px;
+  }
+
+  .slide {
+    width: 200px;
+    height: 300px;
+  }
+
+  .shirt-info h3 {
     font-size: 1rem;
-    color: #0098ea;
-    font-weight: bold;
   }
-  
-  .slider-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 152, 234, 0.5);
-    color: white;
-    border: none;
-    width: 40px;
+
+  .shirt-info p {
+    font-size: 0.9rem;
+  }
+
+  .coming-soon-bar {
     height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  
-  .slider-button:hover {
-    background-color: rgba(0, 152, 234, 0.8);
+
+  .coming-soon-text {
+    font-size: 1rem;
+    line-height: 40px;
   }
-  
-  .prev {
-    left: 20px;
-  }
-  
-  .next {
-    right: 20px;
-  }
-  
-  @media (max-width: 768px) {
-    .merchandise-title {
-      font-size: 2.5rem;
-    }
-  
-    .slider-container {
-      height: 400px;
-    }
-  
-    .slide {
-      width: 250px;
-      height: 350px;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .merchandise-title {
-      font-size: 2rem;
-    }
-  
-    .slider-container {
-      height: 350px;
-    }
-  
-    .slide {
-      width: 200px;
-      height: 300px;
-    }
-  
-    .shirt-info h3 {
-      font-size: 1rem;
-    }
-  
-    .shirt-info p {
-      font-size: 0.9rem;
-    }
-  }
+}

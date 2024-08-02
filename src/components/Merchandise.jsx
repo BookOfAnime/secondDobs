@@ -24,10 +24,7 @@ const Merchandise = () => {
 
   return (
     <section className="merchandise-section">
-      <h2 className="merchandise-title">Merchandise
-        
-      </h2>
-     
+      <h2 className="merchandise-title">Merchandise</h2>
       <div className="slider-container">
         <button className="slider-button prev" onClick={prevSlide}>&#10094;</button>
         <div className="slider">
@@ -54,6 +51,11 @@ const Merchandise = () => {
           })}
         </div>
         <button className="slider-button next" onClick={nextSlide}>&#10095;</button>
+      </div>
+      <div className="coming-soon-bar">
+        <div className="coming-soon-text">
+          Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • Coming Soon • 
+        </div>
       </div>
     </section>
   );
