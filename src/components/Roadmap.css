@@ -115,6 +115,28 @@
   color: #fff;
 }
 
+.scroll-symbol {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  z-index: 20;
+}
+
+.scroll-symbol span {
+  margin-bottom: 5px;
+}
+
+.scroll-symbol svg {
+  width: 24px;
+  height: 24px;
+}
+
 @media (max-width: 768px) {
   .roadmap-section.mobile {
     height: auto;
@@ -152,6 +174,10 @@
 
   .roadmap-card-content {
     padding: 1.5rem;
+  }
+
+  .scroll-symbol {
+    display: none;
   }
 }
 

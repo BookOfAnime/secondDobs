@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Roadmap = () => {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
+  const scrollSymbolRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const roadmapData = [
@@ -54,6 +55,14 @@ const Roadmap = () => {
             pin: true,
             anticipatePin: 1,
             snap: 1 / (roadmapData.length - 1),
+            onUpdate: (self) => {
+              // Hide scroll symbol when reaching the end
+              if (self.progress > 0.9) {
+                gsap.to(scrollSymbolRef.current, { opacity: 0, duration: 0.3 });
+              } else {
+                gsap.to(scrollSymbolRef.current, { opacity: 1, duration: 0.3 });
+              }
+            },
           },
         });
 
@@ -70,6 +79,15 @@ const Roadmap = () => {
             end: "right center",
             toggleClass: "active",
           });
+        });
+
+        // Animate the scroll symbol
+        gsap.to(scrollSymbolRef.current, {
+          y: 10,
+          repeat: -1,
+          yoyo: true,
+          duration: 1,
+          ease: "power1.inOut",
         });
       }
     }, triggerRef);
@@ -95,6 +113,15 @@ const Roadmap = () => {
           ))}
         </div>
       </div>
+      {!isMobile && (
+        <div className="scroll-symbol" ref={scrollSymbolRef}>
+          <span>Keep Scrolling</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
+      )}
     </section>
   );
 };
